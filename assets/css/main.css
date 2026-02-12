@@ -190,7 +190,7 @@ html, body {
 .coming-soon-main .word {
   display: flex;
   white-space: nowrap;
-  letter-spacing: -0.02em; /* removes gaps WITHOUT killing animation */
+  letter-spacing: -0.02em; 
 }
 
 /* animated letters */
