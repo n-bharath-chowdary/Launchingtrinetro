@@ -27,6 +27,8 @@
 
 </head>
 
+
+
 <body class="index-page">
 
   <header id="header" class="header sticky-top">
@@ -42,13 +44,24 @@
         </a>
 
         <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="#hero" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
+
+  <ul id="mobileNav">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <i id="menuToggle" class="mobile-nav-toggle bi bi-list"></i>
+
+</nav>
+
+
+
+
+
+
+
+
 
       </div>
 
@@ -68,8 +81,9 @@
             <h1><span class="welcome-green">Welcome to</span><span class="brand-red"> Trinetro Labs</span></h1>
 
             <p class="hero-description">
-              Inspired by the “third eye” — represents intelligent vision beyond ordinary analytics. We build AI-powered systems that simplify complex data and accelerate decision-making. Our platform blends innovation, usability, and performance into one intelligent ecosystem, helping organizations scale with clarity and confidence.
-            </p>
+              Trinetro Execution Intelligence (TEI) is an AI-powered decision intelligence platform that transforms raw enterprise data into structured insights, semantic relationships, and executable intelligence.
+
+              We build advanced data reasoning systems that automatically discover joins, metrics, grains, and contextual relationships across complex datasets.
           </div>
           <div class="col-lg-6 order-1 order-lg-2 d-flex justify-content-center align-items-center hero-coming-soon-col">
             <div class="hero-coming-soon text-center w-100">
@@ -190,33 +204,33 @@
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <img src="assets/img/about.jpg" alt="" class="img-fluid">
           </div>
-
-          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="about-content ps-0 ps-lg-3">
-              <h3>Trinetro Labs transforms scattered business data into real-time AI intelligence.</h3>
-              <p class="fst-italic">
-                We unify tools like spreadsheets, Mogngo Db, MySql, Excel into one intelligent analytics layer so teams can make faster, confident decisions without technical complexity.
-              </p>
-              <ul>
-                <li>
-                  <i class="bi bi-diagram-3"></i>
-                  <div>
-                    <h4>Ask questions in plain English</h4>
-                    <p>Business teams get instant dashboards, smart alerts, and explainable insights without waiting for analysts or writing SQL.</p>
-                  </div>
-                </li>
-                <li>
-                  <i class="bi bi-fullscreen-exit"></i>
-                  <div>
-                    <h4>Built for India, scalable globally</h4>
-                    <p>Native integrations with Indian platforms and global systems ensure secure, enterprise-ready analytics at scale.</p>
-                  </div>
-                </li>
-              </ul>
-              <p>
-                Trinetro Labs bridges the gap between data chaos and decision clarity. From e-commerce and BFSI to healthcare and logistics, we help organizations unlock hidden opportunities and grow through AI-powered analytics.
-              </p>
-            </div>
+<div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+  <div class="about-content ps-0 ps-lg-3">
+    <h3><span>Trinetro Execution Intelligence - TEI </span> </br> Decision Intelligence Engine built on semantic data reasoning.</h3>
+    <p class="fst-italic">
+      We transform complex enterprise data into structured, contextual intelligence by automatically discovering relationships, joins, metrics, grains, and business logic across systems like Excel, MySQL, MongoDB, and cloud databases — without manual modeling.
+    </p>
+    <ul>
+      <li>
+        <i class="bi bi-diagram-3"></i>
+        <div>
+          <h4>Semantic Data Understanding</h4>
+          <p>TEI intelligently maps data relationships and contextual meaning across datasets, building a live semantic layer that powers accurate insights, automated reasoning, and explainable decisions.</p>
+        </div>
+      </li>
+      <li>
+        <i class="bi bi-fullscreen-exit"></i>
+        <div>
+          <h4>AI-Driven Decision Intelligence</h4>
+          <p>From natural language queries to decision-ready analytics, TEI delivers real-time insights, anomaly detection, and contextual recommendations — eliminating dependency on traditional BI workflows.</p>
+        </div>
+      </li>
+    </ul>
+    <p>
+      Trinetro Labs replaces static dashboards with intelligent systems that think, connect, and reason over data. Our platform enables enterprises to move beyond reporting toward scalable, autonomous decision intelligence.
+    </p>
+  </div>
+</div>
 
           </div>
         </div>
@@ -227,71 +241,78 @@
 
 
     <!-- Faq Section -->
-    <section id="faq" class="faq section light-background">
+  <section id="faq" class="faq section light-background">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>F.A.Q</h2>
-        <p><span>Frequently Asked</span> <span class="description-title">Questions</span></p>
-      </div><!-- End Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>F.A.Q</h2>
+    <p><span>Frequently Asked</span> <span class="description-title">Questions</span></p>
+  </div>
 
-      <div class="container">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row justify-content-center">
+        <div class="faq-container">
 
-          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="faq-container">
-
-              <div class="faq-item">
-                <h3>Which data sources can Trinetro Labs connect to?</h3>
-                <div class="faq-content">
-                  <p>The platform connects to 50+ Indian and global tools including Shopify, Tally, Razorpay, Google Sheets, CRMs, data warehouses, and APIs — all unified into one analytics layer.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Is Trinetro Labs secure for enterprise use?</h3>
-                <div class="faq-content">
-                  <p>Yes. The platform is built with enterprise-grade security, access controls, and compliance standards to protect sensitive business data across teams and departments.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Which industries benefit most from Trinetro Labs?</h3>
-                <div class="faq-content">
-                  <p>E-commerce, BFSI, retail, healthcare, logistics, and fast-growing mid-sized companies benefit the most by reducing reporting delays and improving operational intelligence.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>How can my company get started with Trinetro Labs?</h3>
-                <div class="faq-content">
-                  <p>You can request a demo, connect your existing tools in minutes, and start exploring real-time insights immediately with guided onboarding support.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Do I need technical or SQL knowledge to use Trinetro Labs?</h3>
-                <div class="faq-content">
-                  <p>No. Trinetro Labs is built for business users. You can ask questions in plain English and instantly receive dashboards and insights, while analysts still have advanced scripting options if needed.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
+          <div class="faq-item">
+            <h3>How is TEI different from traditional BI tools like Power BI or Tableau?</h3>
+            <div class="faq-content">
+              <p>Unlike traditional Business Intelligence platforms that rely on manual modeling and static dashboards, TEI uses semantic data reasoning and AI-driven execution logic to dynamically understand data relationships and generate decision-ready insights automatically.</p>
             </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
 
-          </div><!-- End Faq Column-->
+          
+
+          <div class="faq-item">
+            <h3>Can TEI automatically generate metrics and business KPIs?</h3>
+            <div class="faq-content">
+              <p>Yes. TEI intelligently identifies measures, dimensions, and business grains to generate accurate KPIs and real-time analytics. It reduces dependency on manual SQL queries and repetitive reporting workflows.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3>Is Trinetro Labs secure for enterprise use?</h3>
+            <div class="faq-content">
+              <p>Yes. TEI is designed with enterprise-grade security, encryption standards, role-based access control (RBAC), and compliance-ready architecture to protect sensitive organizational data.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3>Does TEI support natural language queries?</h3>
+            <div class="faq-content">
+              <p>Yes. Business users can ask questions in natural language, and TEI translates them into structured semantic queries, returning explainable dashboards, insights, and contextual analysis instantly.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+
+          <div class="faq-item">
+            <h3>Can TEI scale with growing enterprise data?</h3>
+            <div class="faq-content">
+              <p>Yes. TEI is built for scalable architectures, handling high-volume transactional data, distributed systems, and multi-source integrations while maintaining performance and reasoning accuracy.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3>How can my company get started with Trinetro Labs?</h3>
+            <div class="faq-content">
+              <p>You can request a demo, integrate your existing data sources, and experience automated decision intelligence through guided onboarding and enterprise consultation.</p>
+            </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
 
         </div>
 
       </div>
+    </div>
+  </div>
 
-    </section><!-- /Faq Section -->
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
@@ -484,3 +505,7 @@
 </body>
 
 </html>
+
+
+
+

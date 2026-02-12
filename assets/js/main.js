@@ -212,6 +212,7 @@
   window.addEventListener("scroll", updateWhatsAppVisibility);
   window.addEventListener("load", updateWhatsAppVisibility);
 
+  
   /**
    * Query Form Submit Handler
    */
@@ -224,5 +225,22 @@
       }, 300);
     });
   }
+  /**
+ * Clean mobile nav toggle (custom override)
+ */
+const cleanToggle = document.getElementById("menuToggle");
+const cleanMenu = document.getElementById("mobileNav");
+
+
+if (cleanToggle && cleanMenu) {
+  cleanToggle.addEventListener("click", () => {
+    cleanMenu.classList.toggle("show");
+
+    cleanToggle.classList.toggle("bi-list");
+    cleanToggle.classList.toggle("bi-x");
+  });
+}
+
+
 
 })();

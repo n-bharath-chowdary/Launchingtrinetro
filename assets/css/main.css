@@ -1,11 +1,61 @@
 /* Hero company description styling */
+/* Fix mobile overflow */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.container,
+.row {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.mobile-menu-btn {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+/* Push hero title below fixed navbar */
+
+
+
+/* Mobile layout */
+@media (max-width: 768px) {
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: #7ABDE5;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links li {
+    padding: 15px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+
 .hero-description {
   font-family: 'Brawler', serif !important;
   color: #000000;
   font-size: 1.13rem;
   font-weight: 400;
   margin: 1.1rem 0 0.5rem 0;
-  line-height: 1.6;
+  line-height: 1.7;
   letter-spacing: 0.01em;
   text-align: left;
   max-width: 520px;
@@ -37,6 +87,13 @@
   }
 }
 
+/* ===== Mobile: enlarge "Welcome to" only ===== */
+@media (max-width: 768px) {
+  .hero h1 .welcome-green {
+    font-size: 3.4rem !important;
+  }
+}
+
 .launch-video-section {
   width: 100%;
   display: flex;
@@ -49,15 +106,16 @@
   width: 70%;          /* smaller */
   max-width: 1000px;   /* cap size */
   margin: 0 auto;
-  border-radius: 32px;
+  padding: 30px;
   overflow: hidden;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.12);
+  /* box-shadow: 0 40px 100px rgba(0,0,0,0.12); */
 }
 
 .launch-video video {
   width: 100%;
   height: auto;
   display: block;
+
 }
 
 /* Mobile fix */
@@ -426,12 +484,14 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Navigation Menu
+# Navigation Menu (Clean Version)
 --------------------------------------------------------------*/
-/* Navmenu - Desktop */
+
+/* ================= DESKTOP ================= */
 @media (min-width: 1200px) {
-  .navmenu {
-    padding: 0;
+
+  .mobile-nav-toggle {
+    display: none;
   }
 
   .navmenu ul {
@@ -440,227 +500,77 @@ h6 {
     display: flex;
     list-style: none;
     align-items: center;
+    gap: 25px;
   }
 
-  .navmenu li {
-    position: relative;
-  }
-
-  .navmenu a,
-  .navmenu a:focus {
+  .navmenu a {
     color: var(--nav-color);
     padding: 18px 15px;
-    font-size: 15px;
+    font-size: 18px;
     font-family: 'Brawler', serif !important;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    white-space: nowrap;
+    font-weight: 600;
     transition: 0.3s;
-  }
-
-  .navmenu a i,
-  .navmenu a:focus i {
-    font-size: 12px;
-    line-height: 0;
-    margin-left: 5px;
-    transition: 0.3s;
-  }
-
-  .navmenu li:last-child a {
-    padding-right: 0;
-  }
-
-  .navmenu li:hover>a,
-  .navmenu .active,
-  .navmenu .active:focus {
-    color: var(--nav-hover-color);
-  }
-
-  .navmenu .dropdown ul {
-    margin: 0;
-    padding: 10px 0;
-    background: var(--nav-dropdown-background-color);
-    display: block;
-    position: absolute;
-    visibility: hidden;
-    left: 14px;
-    top: 130%;
-    opacity: 0;
-    transition: 0.3s;
-    border-radius: 4px;
-    z-index: 99;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-  }
-
-  .navmenu .dropdown ul li {
-    min-width: 200px;
-  }
-
-  .navmenu .dropdown ul a {
-    padding: 10px 20px;
-    font-size: 15px;
-    text-transform: none;
-    color: var(--nav-dropdown-color);
-  }
-
-  .navmenu .dropdown ul a i {
-    font-size: 12px;
-  }
-
-  .navmenu .dropdown ul a:hover,
-  .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
-    color: var(--nav-dropdown-hover-color);
-  }
-
-  .navmenu .dropdown:hover>ul {
-    opacity: 1;
-    top: 100%;
-    visibility: visible;
-  }
-
-  .navmenu .dropdown .dropdown ul {
-    top: 0;
-    left: -90%;
-    visibility: hidden;
-  }
-
-  .navmenu .dropdown .dropdown:hover>ul {
-    opacity: 1;
-    top: 0;
-    left: -100%;
-    visibility: visible;
-  }
-}
-
-/* Navmenu - Mobile */
-@media (max-width: 1199px) {
-  .mobile-nav-toggle {
-    color: var(--nav-color);
-    font-size: 28px;
-    line-height: 0;
-    margin-right: 10px;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-
-  .navmenu {
-    padding: 0;
-    z-index: 9997;
-  }
-
-  .navmenu ul {
-    display: none;
-    list-style: none;
-    position: absolute;
-    inset: 60px 20px 20px 20px;
-    padding: 10px 0;
-    margin: 0;
-    border-radius: 6px;
-    background-color: var(--nav-mobile-background-color);
-    overflow-y: auto;
-    transition: 0.3s;
-    z-index: 9998;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-  }
-
-  .navmenu a,
-  .navmenu a:focus {
-    color: var(--nav-dropdown-color);
-    padding: 8px 18px;
-    font-family: var(--nav-font);
-    font-size: 30px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    white-space: nowrap;
-    transition: 0.3s;
-  }
-
-  .navmenu a i,
-  .navmenu a:focus i {
-    font-size: 12px;
-    line-height: 0;
-    margin-left: 5px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: 0.3s;
-    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  }
-
-  .navmenu a i:hover,
-  .navmenu a:focus i:hover {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
   }
 
   .navmenu a:hover,
-  .navmenu .active,
-  .navmenu .active:focus {
-    color: var(--nav-dropdown-hover-color);
+  .navmenu .active {
+    color: #634512;
   }
+}
 
-  .navmenu .active i,
-  .navmenu .active:focus i {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
-    transform: rotate(180deg);
-  }
 
-  .navmenu .dropdown ul {
-    position: static;
-    display: none;
-    z-index: 99;
-    padding: 10px 0;
-    margin: 10px 20px;
-    background-color: var(--nav-dropdown-background-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    box-shadow: none;
-    transition: all 0.5s ease-in-out;
-  }
+/* ================= MOBILE ================= */
+@media (max-width: 1199px) {
 
-  .navmenu .dropdown ul ul {
-    background-color: rgba(33, 37, 41, 0.1);
-  }
-
-  .navmenu .dropdown>.dropdown-active {
+  /* hamburger */
+  .mobile-nav-toggle {
     display: block;
-    background-color: rgba(33, 37, 41, 0.03);
+    font-size: 30px;
+    cursor: pointer;
+    color: #634512;
+    z-index: 10000;
+  }
+
+  /* hide menu by default */
+  .navmenu > ul {
+    display: none;
+  }
+
+  /* full screen overlay when active */
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    inset: 0;
+    background: rgba(122, 189, 229, 0.6);
+    z-index: 9998;
+  }
+
+  /* show menu */
+  .mobile-nav-active .navmenu > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+}
+
+
+  /* links */
+  .mobile-nav-active .navmenu a {
+    font-size: 26px;
+    font-weight: 700;
+    color: #634512;
   }
 
   .mobile-nav-active {
     overflow: hidden;
   }
-
-  .mobile-nav-active .mobile-nav-toggle {
-    color: #fff;
-    position: absolute;
-    font-size: 32px;
-    top: 15px;
-    right: 15px;
-    margin-right: 0;
-    z-index: 9999;
-  }
-
-  .mobile-nav-active .navmenu {
-    position: fixed;
-    overflow: hidden;
-    inset: 0;
-    background: rgba(33, 37, 41, 0.8);
-    transition: 0.3s;
-  }
-
-  .mobile-nav-active .navmenu>ul {
-    display: block;
-  }
 }
+
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -952,7 +862,7 @@ section,
 }
 
 .section-title h2 {
-  font-size: 13px;
+  font-size: 25px;
   letter-spacing: 1px;
   font-weight: 700;
   padding: 8px 20px;
@@ -1005,9 +915,9 @@ section,
 
 .hero h1 {
   margin: 0;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 56px;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 65px;
 }
 
 
@@ -1158,8 +1068,11 @@ section,
 # About Section
 --------------------------------------------------------------*/
 .about .about-content h3 {
-  font-weight: 700;
-  font-size: 26px;
+  font-weight: 600;
+  font-size: 18px;
+}
+.about .about-content h3 span {
+  font-size: 25px !important;
 }
 
 .about .about-content ul {
@@ -1326,6 +1239,8 @@ section,
 .contact .info-wrap {
   background-color: var(--surface-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 22px 55px  #9ce3f7b6;
+  border-radius: 45px;
   padding: 30px;
 }
 
@@ -1453,6 +1368,8 @@ section,
 
 .hero h1 .brand-red {
   color: #881600 !important;
+  font-weight: 800;
+  font-size: 4rem;
 }
 
 /* =================================
@@ -1542,9 +1459,11 @@ section,
 /* ===== Blue Transparent Navbar ===== */
 .header,
 .header .branding {
-  background: rgba(122, 189, 229, 0.25) !important; /* blue transparent */
+  background: rgba(169, 215, 255, 29%) !important; /* blue transparent */
   backdrop-filter: blur(10px); /* glass effect */
   border-bottom: 2px solid rgba(122, 189, 229, 0.6);
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 .navmenu a {
@@ -1585,17 +1504,14 @@ section,
     0 30px 60px rgba(0,0,0,0.18) !important;
 }
 
-
-
-
 .launch-date-badge {
   margin-top: 16px;
   padding: 8px 18px;
 
-  background: #634512;
-  color: #EAEAEA;
+  background: #DEBF8A;
+  color: #000000;
 
-  font-size: 0.95rem;
+  font-size: 1.35rem;
   font-weight: 600;
   border-radius: 999px;
 
@@ -1626,7 +1542,7 @@ section,
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
   border: 1px solid rgba(255,255,255,0.5);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 40px rgba(147, 198, 222, 0.815);
 }
 
 .glass-form h2 {
@@ -1785,11 +1701,12 @@ section,
   width: 100%;
   max-width: 520px;
   aspect-ratio: 16 / 10;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .video-stack .video-bg {
   position: absolute;
+  visibility: hidden;
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, var(--accent-color), #7fc8f8);
@@ -1811,6 +1728,7 @@ section,
 
 .video-stack .video-card {
   position: relative;
+  top: 45px;
   z-index: 2;
   background: #fff;
   border-radius: 20px;
@@ -1832,3 +1750,198 @@ section,
   }
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.mobile-nav-active input,
+.mobile-nav-active .search,
+.mobile-nav-active .form-control {
+  display: none !important;
+  background: transparent !important;
+  border: none !important;
+}
+@media (max-width: 1199px) {
+  .navmenu a {
+    color: #634512 !important;
+    font-size: 22px;
+    padding: 14px 24px;
+  }
+
+  .navmenu a:hover {
+    color: #EAEAEA !important;
+  }
+}
+.mobile-nav-toggle {
+  color: #634512 !important;
+}
+
+/* 🔥 Kill ghost mobile bar completely */
+.mobile-nav-active .navmenu::before,
+.mobile-nav-active .navmenu::after,
+.navmenu::before,
+.navmenu::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Remove any leftover mobile header strip */
+.mobile-nav-active .mobile-nav-toggle + * {
+  display: none !important;
+}
+
+.mobile-nav-active .navmenu {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(122, 189, 229, 0.6);
+  padding-top: 90px !important;
+  overflow-y: auto;
+}
+
+.navmenu * {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ===== Mobile nav hidden by default ===== */
+
+
+
+/* Menu list */
+.navmenu ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navmenu a {
+  text-decoration: none;
+  color: #634512;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Hamburger hidden on desktop */
+.mobile-nav-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+
+/* ===== FINAL MOBILE NAV FIX ===== */
+@media (max-width: 1199px) {
+
+  /* show hamburger only on mobile */
+  .mobile-nav-toggle {
+    display: block !important;
+    color: #634512 !important;
+  }
+
+  /* hide menu by default */
+  .navmenu > ul {
+    display: none !important;
+  }
+
+  /* when clicked → show menu */
+  .mobile-nav-active .navmenu > ul {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    background: rgba(122, 189, 229, 0.6) !important;
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+  }
+
+  /* link style */
+  .mobile-nav-active .navmenu a {
+    color: #634512 !important;
+    font-size: 26px !important;
+    font-weight: 700;
+  }
+
+  /* remove ghost overlay */
+  .navmenu::before,
+  .navmenu::after {
+    display: none !important;
+    content: none !important;
+  }
+}
+
+body.mobile-nav-active .navmenu > ul {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;   /* changed */
+  gap: 14px !important;                 /* added */
+
+  align-items: center !important;
+
+  position: absolute !important;
+  top: 15px !important;
+  left: 0 !important;
+  width: 100% !important;
+
+  background: #7ABDE5 !important;
+  padding: 10px 0 !important;
+}
+body.mobile-nav-active .navmenu > ul {
+  justify-content: center !important;
+  gap: 6px !important;   /* ← tighter spacing */
+}
+
+body.mobile-nav-active .navmenu a {
+  padding: 0 6px !important;  /* ← remove extra side space */
+}
+
+
+/* ===== About Image Glass Card Style ===== */
+
+.about img,
+.about .about-img img,
+.about-image img {
+  border-radius: 40px;
+  overflow: hidden;
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.5);
+
+  background: rgba(255,255,255,0.35);
+}
+
+/* optional glass wrapper */
+.about .about-img,
+.about-image {
+  border-radius: 40px;
+  padding: 8px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.5),
+    rgba(255,255,255,0.15)
+  );
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+}
+
+
+.header,
+.scrolled .header {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+#hero {
+  padding-top: 160px !important;
+}
