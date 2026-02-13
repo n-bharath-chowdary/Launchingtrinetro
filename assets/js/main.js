@@ -212,15 +212,49 @@
 
   
   /**
-   * Query Form Submit Handler
+   * Query Form Submit Handler (AJAX — no redirect)
    */
   const queryForm = document.getElementById("queryForm");
 
   if (queryForm) {
-    queryForm.addEventListener("submit", function () {
-      setTimeout(() => {
-        alert("✅ Query sent successfully! We'll get back to you soon.");
-      }, 300);
+    queryForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const form = this;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const msgEl = document.getElementById("formMessage");
+      const originalText = submitBtn.textContent;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+      msgEl.textContent = "";
+      msgEl.className = "form-message";
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: formData
+      })
+        .then(response => {
+          if (response.ok) {
+            msgEl.textContent = "✅ Query sent successfully! We'll get back to you soon.";
+            msgEl.classList.add("form-message-success");
+            form.reset();
+            if (sizeValue) sizeValue.textContent = "50";
+          } else {
+            throw new Error("Submission failed");
+          }
+        })
+        .catch(() => {
+          msgEl.textContent = "❌ Something went wrong. Please try again or contact us via WhatsApp.";
+          msgEl.classList.add("form-message-error");
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        });
     });
   }
   /**
